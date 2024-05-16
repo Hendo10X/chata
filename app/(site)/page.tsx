@@ -23,7 +23,7 @@ export default function Home() {
           src="/images/Logo.png"
         />
         <h2 className="
-            mt-6
+            mt-2
             text-center
             text-2xl
             font-bold
