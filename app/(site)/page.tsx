@@ -22,17 +22,19 @@ export default function Home() {
           className="mx-auto w-auto"
           src="/images/Logo.png"
         />
-        <h2 className="
+        <h2
+          className="
             mt-2
             text-center
             text-2xl
             font-bold
             tracking-light
-            text-gray-900">
-                Sign in to account
+            text-gray-900"
+        >
+          Sign in to account
         </h2>
       </div>
-            <AuthForm/>
+      <AuthForm />
     </div>
   );
 }
