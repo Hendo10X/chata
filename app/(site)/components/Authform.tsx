@@ -96,7 +96,7 @@ const AuthForm = () => {
 
           <div>
             <Button disabled={isLoading} fullWidth type="submit">
-              {variant === "LOGIN" ? "Sign Up" : "Log in"}
+              {variant === "LOGIN" ? "Log in" : "Sign up"}
             </Button>
           </div>
         </form>
@@ -127,7 +127,7 @@ const AuthForm = () => {
             >
               <span
                 className="
-                            bg-white px-2  text-gray-500"
+                            bg-white px-2 text-gray-500"
               >
                 Or continue with
               </span>
@@ -157,7 +157,7 @@ const AuthForm = () => {
             {variant === "LOGIN" ? "New to Chatterama?" : "Already a user?"}
 
             <div onClick={toggleVariant} className="underline cursor-pointer">
-              {variant === "LOGIN" ? "Create an account" : "Login"}
+              {variant === "LOGIN" ? "Create an account" : "Log in"}
             </div>
           </div>
         </div>
