@@ -5,7 +5,7 @@ import { use, useCallback, useState } from "react";
 import { FieldValues, useForm, SubmitHandler } from "react-hook-form";
 import Button from "@/app/components/Button";
 import AuthSocialButton from "./AuthSocialB";
-import { FaFacebook } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import toast from "react-hot-toast";
 import { signIn } from "next-auth/react";
@@ -52,10 +52,10 @@ const AuthForm = () => {
       })
         .then((callback) => {
           if (callback?.error) {
-            toast.error("Invalid credentials");
+            toast.error("Please put in your credentials");
           }
           if (callback?.ok && !callback?.error) {
-            toast.success("Yayyy! Logged in");
+            toast.success("Yayyy! Logged in ");
           }
         })
         .finally(() => setIsLoading(false));
@@ -64,6 +64,18 @@ const AuthForm = () => {
 
   const socialAction = (action: string) => {
     setIsLoading(true);
+
+    signIn(action, { redirect: false })
+      .then((callback) => {
+        if (callback?.error) {
+          toast.error("Invalid Character");
+        }
+
+        if (callback?.ok && !callback) {
+          toast.success("Logged in!");
+        }
+      })
+      .finally(() => setIsLoading(false));
   };
 
   return (
@@ -88,7 +100,7 @@ const AuthForm = () => {
           {variant === "REGISTER" && (
             <Input
               id="name"
-              label="Name"
+              label="Nickname"
               register={register}
               errors={errors}
               disabled={isLoading}
@@ -153,8 +165,8 @@ const AuthForm = () => {
           </div>
           <div className="mt-6 flex gap-2">
             <AuthSocialButton
-              icon={FaFacebook}
-              onClick={() => socialAction("facebook")}
+              icon={FaGithub}
+              onClick={() => socialAction("github")}
             />
             <AuthSocialButton
               icon={FcGoogle}
