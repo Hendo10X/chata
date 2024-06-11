@@ -20,7 +20,7 @@ export default function Home() {
           height="48"
           width="48"
           className="mx-auto w-auto"
-          src="/images/Logo.png"
+          src="/images/Chat-Logo.svg"
         />
         <h2
           className="
@@ -31,7 +31,7 @@ export default function Home() {
             tracking-light
             text-gray-900"
         >
-          Sign in to account
+          Welcome to Chatterama
         </h2>
       </div>
       <AuthForm />
